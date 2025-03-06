@@ -4,14 +4,14 @@ import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 
 export function ParticlesBackground() {
-  const inicializarParticulas = useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
 
   return (
     <Particles
       className="absolute inset-0"
-      init={inicializarParticulas}
+      init={particlesInit}
       options={{
         fullScreen: { enable: false },
         background: {
@@ -35,7 +35,7 @@ export function ParticlesBackground() {
               quantity: 4,
             },
             repulse: {
-              distance: 100,
+              distance: 70,
               duration: 0.4,
             },
           },
@@ -85,4 +85,4 @@ export function ParticlesBackground() {
       }}
     />
   );
-} 
+}
